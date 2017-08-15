@@ -125,11 +125,13 @@ var controller = lib.SimpleCalculatorController;
 
 ### <a name="get_calculate"></a>![Method: ](https://apidocs.io/img/method.png ".SimpleCalculatorController.getCalculate") getCalculate
 
-> Calculates the expression using the specified operation.
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Calculate
 
 
 ```javascript
-function getCalculate(input, callback)
+function getCalculate(operation, x, y, callback)
 ```
 #### Parameters
 
@@ -145,12 +147,11 @@ function getCalculate(input, callback)
 
 ```javascript
 
-    var input = [];
-        input['operation'] = Object.keys(Operation Type)[0];
-        input['x'] = 64.8899881401518;
-        input['y'] = 64.8899881401518;
+    var operation = Object.keys(operation)[0];
+    var x = 238.98346423357;
+    var y = 238.98346423357;
 
-    controller.getCalculate(input, function(error, response, context) {
+    controller.getCalculate(operation, x, y, function(error, response, context) {
 
     
     });

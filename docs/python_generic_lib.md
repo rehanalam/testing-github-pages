@@ -112,11 +112,15 @@ An instance of the ``` SimpleCalculatorController ``` class can be accessed from
 
 ### <a name="get_calculate"></a>![Method: ](https://apidocs.io/img/method.png ".SimpleCalculatorController.get_calculate") get_calculate
 
-> Calculates the expression using the specified operation.
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Calculate
 
 ```python
 def get_calculate(self,
-                      options=dict())
+                      operation,
+                      x,
+                      y)
 ```
 
 #### Parameters
@@ -132,19 +136,11 @@ def get_calculate(self,
 #### Example Usage
 
 ```python
-collect = {}
+operation = OperationEnum.SUM
+x = 33.7555728986653
+y = 33.7555728986653
 
-operation = OperationTypeEnum.SUM
-collect['operation'] = operation
-
-x = 6.22694092394176
-collect['x'] = x
-
-y = 6.22694092394176
-collect['y'] = y
-
-
-result = simple_calculator_client.get_calculate(collect)
+result = simple_calculator_client.get_calculate(operation, x, y)
 
 ```
 

@@ -81,14 +81,18 @@ Configuration variables can be set as following.
 SimpleCalculator* simpleCalculator = [[SimpleCalculator alloc]init] ;
 ```
 
-### <a name="get_calculate_async_with_get_calculate_input"></a>![Method: ](https://apidocs.io/img/method.png ".SimpleCalculatorController.getCalculateAsyncWithGetCalculateInput") getCalculateAsyncWithGetCalculateInput
+### <a name="get_calculate_async_with_operation"></a>![Method: ](https://apidocs.io/img/method.png ".SimpleCalculatorController.getCalculateAsyncWithOperation") getCalculateAsyncWithOperation
 
-> Calculates the expression using the specified operation.
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Calculate
 
 
 ```objc
-function getCalculateAsyncWithGetCalculateInput:(GetCalculateInput*) input
-                completionBlock:(CompletedGetCalculate) onCompleted(input)
+function getCalculateAsyncWithOperation:(enum OperationEnum) operation
+                x:(double) x
+                y:(double) y
+                completionBlock:(CompletedGetCalculate) onCompleted(operation x : x y : y)
 ```
 
 #### Parameters
@@ -107,12 +111,11 @@ function getCalculateAsyncWithGetCalculateInput:(GetCalculateInput*) input
 
 ```objc
     // Parameters for the API call
-    GetCalculateInput *input = [[GetCalculateInput alloc]init];
-    input.operation = SUM;
-    input.x = 101.315707804782;
-    input.y = 101.315707804782;
+    OperationEnum operation = SUM;
+    double x = 238.98346423357;
+    double y = 238.98346423357;
 
-    [self.simpleCalculator getCalculateAsyncWithGetCalculateInput: input completionBlock:^(BOOL success, HttpContext* context, NSNumber* response, NSError* error) { 
+    [self.simpleCalculator getCalculateAsyncWithOperation: operation x : x y : y  completionBlock:^(BOOL success, HttpContext* context, NSNumber* response, NSError* error) { 
        //Add code here
     }];
 ```

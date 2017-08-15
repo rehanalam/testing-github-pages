@@ -91,11 +91,13 @@ SimpleCalculatorController simpleCalculator = client.SimpleCalculator;
 
 ### <a name="get_calculate"></a>![Method: ](https://apidocs.io/img/method.png "Calc.PCL.Controllers.SimpleCalculatorController.GetCalculate") GetCalculate
 
-> Calculates the expression using the specified operation.
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Calculate
 
 
 ```csharp
-Task<double?> GetCalculate(Models.GetCalculateInput input)
+Task<double?> GetCalculate(Models.OperationEnum operation, double x, double y)
 ```
 
 #### Parameters
@@ -110,19 +112,11 @@ Task<double?> GetCalculate(Models.GetCalculateInput input)
 #### Example Usage
 
 ```csharp
-GetCalculateInput collect = new GetCalculateInput();
+var operation = Models.OperationEnumHelper.ParseString("SUM");
+double x = 238.98346423357;
+double y = 238.98346423357;
 
-var operation = Models.OperationTypeEnumHelper.ParseString("SUM");
-collect.Operation = operation;
-
-double x = 92.4247692536678;
-collect.X = x;
-
-double y = 92.4247692536678;
-collect.Y = y;
-
-
-double? result = await simpleCalculator.GetCalculate(collect);
+double? result = await simpleCalculator.GetCalculate(operation, x, y);
 
 ```
 

@@ -117,11 +117,16 @@ simpleCalculator := simplecalculator_pkg.NewSIMPLECALCULATOR()
 
 ### <a name="get_calculate"></a>![Method: ](https://apidocs.io/img/method.png ".simplecalculator_pkg.GetCalculate") GetCalculate
 
-> Calculates the expression using the specified operation.
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Calculate
 
 
 ```go
-func (me *SIMPLECALCULATOR_IMPL) GetCalculate(input *GetCalculateInput)(*float64,error)
+func (me *SIMPLECALCULATOR_IMPL) GetCalculate(
+            operation models_pkg.OperationEnum,
+            x float64,
+            y float64)(*float64,error)
 ```
 
 #### Parameters
@@ -136,20 +141,12 @@ func (me *SIMPLECALCULATOR_IMPL) GetCalculate(input *GetCalculateInput)(*float64
 #### Example Usage
 
 ```go
-collect := new (simplecalculator_pkg.GetCalculateInput)
-
-operation := models_pkg.Operation Type_SUM
-collect.Operation = operation
-
-x := 147.4943314807
-collect.X = x
-
-y := 147.4943314807
-collect.Y = y
-
+operation := models_pkg.operation_SUM
+x := 33.7555728986653
+y := 33.7555728986653
 
 var result *float64
-result,_ = simpleCalculator.GetCalculate(collect)
+result,_ = simpleCalculator.GetCalculate(operation, x, y)
 
 ```
 

@@ -136,11 +136,16 @@ $simpleCalculator = $client->getSimpleCalculator();
 
 ### <a name="get_calculate"></a>![Method: ](https://apidocs.io/img/method.png ".SimpleCalculatorController.getCalculate") getCalculate
 
-> Calculates the expression using the specified operation.
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Calculate
 
 
 ```php
-function getCalculate($options)
+function getCalculate(
+        $operation,
+        $x,
+        $y)
 ```
 
 #### Parameters
@@ -157,16 +162,10 @@ function getCalculate($options)
 
 ```php
 $operation = string::SUM;
-$collect['operation'] = $operation;
+$x = 33.7555728986653;
+$y = 33.7555728986653;
 
-$x = 232.850156697841;
-$collect['x'] = $x;
-
-$y = 232.850156697841;
-$collect['y'] = $y;
-
-
-$result = $simpleCalculator->getCalculate($collect);
+$result = $simpleCalculator->getCalculate($operation, $x, $y);
 
 ```
 

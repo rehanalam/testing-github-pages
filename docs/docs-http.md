@@ -25,38 +25,40 @@ The Base URL for this API is `http://examples.apimatic.io/apps/calculator`
 
 **`GET`** `/{operation}`
 
-> Calculates the expression using the specified operation.
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Calculate
 
 
 
 #### Path Parameters
 | Parameter | Type | Tags | Description | Example |
 |-----------|------| ---- |-------------| ------- |
-| operation | `Operation Type` |  ``` Required ```  | The operator to apply on the variables | `"SUM"` | 
+| operation | `operation` |  ``` Required ```  | The operator to apply on the variables | `"SUM"` | 
 
 #### Query Parameters
 | Parameter | Type | Tags | Description | Example |
 |-----------|------| ---- |-------------| ------- |
-| x | `precision` |  ``` Required ```  | The LHS value | `210.612829146261` | 
-| y | `precision` |  ``` Required ```  | The RHS value | `210.612829146261` | 
+| x | `precision` |  ``` Required ```  | The LHS value | `33.7555728986653` | 
+| y | `precision` |  ``` Required ```  | The RHS value | `33.7555728986653` | 
 
 #### Responses
 **200** 
 
 Body (_precision_) 
 ```
-210.612829146261
+33.7555728986653
 ```
 
 
 **412** 
 
 > Could not compute the requested calculation
-Body (_CouldNotCompute_) 
+Body (_CouldNotCompute_Error_) 
 ```
 {
   "ServerMessage": "ServerMessage",
-  "ServerCode": 210
+  "ServerCode": 33
 }
 ```
 

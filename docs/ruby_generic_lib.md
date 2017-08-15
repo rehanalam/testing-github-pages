@@ -99,11 +99,15 @@ simpleCalculator = client.simple_calculator
 
 ### <a name="get_calculate"></a>![Method: ](https://apidocs.io/img/method.png ".SimpleCalculatorController.get_calculate") get_calculate
 
-> Calculates the expression using the specified operation.
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Calculate
 
 
 ```ruby
-def get_calculate(options = Hash.new); end
+def get_calculate(operation,
+                      x,
+                      y); end
 ```
 
 #### Parameters
@@ -118,19 +122,11 @@ def get_calculate(options = Hash.new); end
 #### Example Usage
 
 ```ruby
-collect = Hash.new
+operation = Calc::OperationEnum::SUM
+x = 197.260291007003
+y = 197.260291007003
 
-operation = Calc::OperationTypeEnum::SUM
-collect['operation'] = operation
-
-x = 28.4642684755215
-collect['x'] = x
-
-y = 28.4642684755215
-collect['y'] = y
-
-
-result = simpleCalculator.get_calculate(collect)
+result = simpleCalculator.get_calculate(operation, x, y)
 
 ```
 

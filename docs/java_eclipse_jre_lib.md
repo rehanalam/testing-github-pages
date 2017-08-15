@@ -108,12 +108,16 @@ SimpleCalculatorController simpleCalculator = client.getSimpleCalculator();
 
 ### <a name="get_calculate_async"></a>![Method: ](https://apidocs.io/img/method.png "io.apimatic.examples.controllers.SimpleCalculatorController.getCalculateAsync") getCalculateAsync
 
-> Calculates the expression using the specified operation.
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Calculate
 
 
 ```java
 void getCalculateAsync(
-        final GetCalculateInput input,
+        final OperationEnum operation,
+        final double x,
+        final double y,
         final APICallBack<Double> callBack)
 ```
 
@@ -129,27 +133,18 @@ void getCalculateAsync(
 #### Example Usage
 
 ```java
-GetCalculateInput collect = new GetCalculateInput();
-
-OperationTypeEnum operation = OperationTypeEnum.fromString("SUM");
-collect.setOperation(operation);
-
-double x = 160.840720481165;
-collect.setX(x);
-
-double y = 160.840720481165;
-collect.setY(y);
-
+OperationEnum operation = OperationEnum.fromString("SUM");
+double x = 33.7555728986653;
+double y = 33.7555728986653;
 // Invoking the API call with sample inputs
-simpleCalculator.getCalculateAsync(collect, new APICallBack<Double>() {
+simpleCalculator.getCalculateAsync(operation, x, y, new APICallBack<Double>() {
     public void onSuccess(HttpContext context, Double response) {
         // TODO success callback handler
     }
     public void onFailure(HttpContext context, Throwable error) {
         // TODO failure callback handler
     }
-}
-);
+});
 
 ```
 

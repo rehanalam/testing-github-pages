@@ -101,6 +101,7 @@ Import the reference to the generated SDK files inside your html file like:
     <!-- Models -->
     <script src="scripts/CalcLib/Models/BaseModel.js"></script>
     <script src="scripts/CalcLib/Models/OperationTypeEnum.js"></script>
+    <script src="scripts/CalcLib/Models/OperationEnum.js"></script>
 
     ...
 </head>
@@ -183,11 +184,13 @@ The singleton instance of the ``` SimpleCalculatorController ``` class can be ac
 
 ### <a name="get_calculate"></a>![Method: ](https://apidocs.io/img/method.png ".SimpleCalculatorController.getCalculate") getCalculate
 
-> Calculates the expression using the specified operation.
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Calculate
 
 
 ```javascript
-function getCalculate(input)
+function getCalculate(operation, x, y)
 ```
 #### Parameters
 
@@ -205,13 +208,12 @@ function getCalculate(input)
 
 
 	app.controller("testController", function($scope, SimpleCalculatorController){
-        var input = [];
-        input['operation'] = Object.keys(OperationTypeEnum)[0];
-        input['x'] = 170.573662144865;
-        input['y'] = 170.573662144865;
+        var operation = Object.keys(OperationEnum)[0];
+        var x = 238.98346423357;
+        var y = 238.98346423357;
 
 
-		var result = SimpleCalculatorController.getCalculate(input);
+		var result = SimpleCalculatorController.getCalculate(operation, x, y);
         //Function call returns a promise
         result.then(function(success){
 			//success case
