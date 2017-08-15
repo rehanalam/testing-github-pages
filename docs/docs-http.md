@@ -37,15 +37,15 @@ The Base URL for this API is `http://examples.apimatic.io/apps/calculator`
 #### Query Parameters
 | Parameter | Type | Tags | Description | Example |
 |-----------|------| ---- |-------------| ------- |
-| x | `precision` |  ``` Required ```  | The LHS value | `164.787408392777` | 
-| y | `precision` |  ``` Required ```  | The RHS value | `164.787408392777` | 
+| x | `precision` |  ``` Required ```  | The LHS value | `210.612829146261` | 
+| y | `precision` |  ``` Required ```  | The RHS value | `210.612829146261` | 
 
 #### Responses
 **200** 
 
 Body (_precision_) 
 ```
-164.787408392777
+210.612829146261
 ```
 
 
@@ -56,7 +56,7 @@ Body (_CouldNotCompute_)
 ```
 {
   "ServerMessage": "ServerMessage",
-  "ServerCode": 1
+  "ServerCode": 210
 }
 ```
 
